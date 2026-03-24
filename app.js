@@ -36,7 +36,6 @@ const newGame = document.querySelector("#new-game");
 newGame.addEventListener("click", function () {
   window.location.replace("Game.html");
   console.log("You clicked the new game button!");
-  alert("New game started!");
 });
 
 const resetGame = document.querySelector("#reset-game");
