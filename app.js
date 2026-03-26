@@ -4,23 +4,30 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Any code inside this function will run
   // as soon as the page is fully loaded
-  startGame();
 });
 // This is an example function structure
 // You will place your game setup logic inside it
+let guessedLetters = [];
+let wrongGuesses = [];
 let secretWord = "";
-function startGame() {
-
-
-  const wordList = ["Monopoly", "Chutes and Ladders", "Mouse trap", "Trouble", "The game of life", "Candy land", "Clue", "Risk", "Sorry", "Battleship", "Connect 4", "Jenga", "Twister", "Operation", "Pictionary", "Scrabble", "Taboo", "Trivial Pursuit", "Uno", "Go Fish"];
-  secretWord = wordList[Math.floor(Math.random() * wordList.length)];
-  console.log("The secret word is: " + secretWord);
+ const wordList = ["Monopoly", "Chutes and Ladders", "Mouse trap", "Trouble", "The game of life", "Candy land", "Clue", "Risk", "Sorry", "Battleship", "Connect 4", "Jenga", "Twister", "Operation", "Pictionary", "Scrabble", "Taboo", "Trivial Pursuit", "Uno", "Go Fish"];
+  startGame = (wordList);
+   {
+    document.getElementById("result1").style.display = "none";
+    document.getElementById("result2").style.display = "none";
+   guessedLetters = [];
+   wrongGuesses = [];
+   secretWord = wordList[Math.floor(Math.random() * wordList.length)];
+   console.log("The secret word is: " + secretWord);
+//   updateDisplay();
+//   updateWrongGuesses();
+//   updateGuessedLetters();
+  }
   // Example things your game might do here:
   // • pick the random word
   // • reset variables
   // • build the starting display
   // • update elements on the page
-}
 function pressLetter(letter) {
   // This function will run when a letter button is pressed
   // You will need to write the logic to check if the letter is in the word
@@ -55,11 +62,12 @@ for (let i = 0; i < secretWord.length; i++) {
   // Check if this letter exists in the guessedLetters array
   // includes() returns true if the letter exists in the array
   if (guessedLetters.includes(letter)) {
-
+  
+  
     // If the letter has been guessed,
     // add the letter to the display string
     // A space is added so the letters appear spaced out
-    display += letter + " ";
+    display += letter + "word-display";
 
   } else {
 
